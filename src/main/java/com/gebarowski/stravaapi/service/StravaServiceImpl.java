@@ -1,5 +1,7 @@
 package com.gebarowski.stravaapi.service;
 
+import com.gebarowski.stravaapi.dataprovider.ApplicationPropertiesProvider;
+import com.gebarowski.stravaapi.dataprovider.TokenProvider;
 import com.gebarowski.stravaapi.model.AccessTokenResponse;
 import com.gebarowski.stravaapi.model.ActivityRequest;
 import com.gebarowski.stravaapi.model.ActivityResponse;
@@ -11,7 +13,8 @@ import reactor.core.publisher.Mono;
 @Service
 public class StravaServiceImpl implements StravaService{
 
-    private TokenService tokenService;
+    private TokenProvider tokenProvider;
+    private ApplicationPropertiesProvider applicationPropertiesProvider;
 
     @Override
     public Mono<ActivityResponse> getActivity(ActivityRequest activityRequest) {
@@ -19,8 +22,8 @@ public class StravaServiceImpl implements StravaService{
     }
 
     @Override
-    public Mono<AccessTokenResponse> getAccessToken(Long athleteId) {
-        String token = tokenService.getToken.apply(athleteId);
+    public Mono<AccessTokenResponse> getAccessToken(String athleteId) {
+        String token = tokenProvider.getToken.apply(athleteId);
 
         return null;
     }

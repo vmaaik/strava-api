@@ -8,5 +8,5 @@ import reactor.core.publisher.Mono;
 
 public interface StravaService {
     Mono<ActivityResponse> getActivity(ActivityRequest activityRequest);
-    Mono<AccessTokenResponse> getAccessToken(Long athleteId);
+    Mono<AccessTokenResponse> getAccessToken(String athleteId);
 }

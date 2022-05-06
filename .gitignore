@@ -37,3 +37,4 @@ out/
 .vscode/
 
 /src/main/resources/token.properties
+/src/main/resources/app.properties
